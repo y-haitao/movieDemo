@@ -1,0 +1,93 @@
+<!-- pages/movieDetail/movieDetail.wxml -->
+<view class="container">
+    <!-- 影片详情 -->
+    <view class="movie_panel">
+        <!-- 滤镜 -->
+        <view class="movie_filter"></view>
+        <!-- 面板背景 -->
+        <view class="panel_bg" style="background-image:url({{detail.images.small}})"></view>
+        <!-- 影片详情内容 -->
+        <view class="panel_main">
+            <view class="main_left">
+                <image src="{{detail.images.small}}" />
+            </view>
+            <view class="main_right">
+                <!-- 电影名称（中文） -->
+                <view class="title_Chinese ellipsis">
+                    <text>{{detail.title}}</text>
+                    <text class="rating ellipsis">豆瓣评分：{{detail.rating.average}}</text>
+                </view>
+                <!-- 电影名称（英文） -->
+                <text class="title_English ellipsis">{{detail.original_title}}</text>
+                <!-- 想看量 -->
+                <view class="wish_count ellipsis">
+                    <text class="wish_count_teext">{{detail.wish_count}} 人想看</text>
+                </view>
+                <!-- 类型 -->
+                <text class="genres ellipsis">类型：{{detail.genres}}</text>
+                <!-- 国家、时长 -->
+                <text class="length ellipsis">{{detail.countries[0]}} / {{detail.durations[0]}}</text>
+                <!-- 上映时间 -->
+                <text class="pubdate ellipsis">{{detail.pubdate}} 大陆上映</text>
+            </view>
+        </view>
+    </view>
+    <!-- 影片简介 -->
+    <view class="summary">
+        <panel summary="{{detail.summary}}"></panel>
+    </view>
+    <!-- 演职人员 -->
+    <view class="detail_item actors">
+        <!-- <view class="common_title">演职人员</view> -->
+        <!-- 导演 -->
+        <text class="directors_text">导演：</text>
+        <scroll-view class="scroll_directors" scroll-x="true" upper-threshold="50" lower-threshold="50">
+            <view class="directors" wx:for="{{detail.directors}}" wx:key="index">
+                <image class="person" src="{{item.avatars.small}}" />
+                <text class="name_English ellipsis">{{item.name_en || item.name}}</text>
+                <text class="name_Chinese ellipsis">{{item.name}}</text>
+            </view>
+        </scroll-view>
+        <!-- 演员 -->
+        <text class="actors_text">主演：</text>
+        <scroll-view class="scroll_actors" scroll-x="true" upper-threshold="50" lower-threshold="50">
+            <view class="actor" wx:for="{{detail.casts}}" wx:key="index">
+                <image class="person" src="{{item.avatars.small}}" />
+                <text class="name_English ellipsis">{{item.name_en || item.name}}</text>
+                <text class="name_Chinese ellipsis">{{item.name}}</text>
+            </view>
+        </scroll-view>
+    </view>
+    <!-- 剧照 -->
+    <view class="detail_item media">
+        <text class="common_title">剧照</text>
+        <scroll-view class="scroll_media" scroll-x="{{true}}">
+            <view class="media_com" wx:for="{{detail.photos}}" wx:key="index" bind:tap="preview" data-index="{{index}}">
+                <image class="media_img" mode="aspectFill" src="{{item.image}}" />
+            </view>
+        </scroll-view>
+    </view>
+    <!-- 精彩影评 -->
+    <view class="detail_item comment">
+        <text class="common_title">影评</text>
+        <view class="discuss_list">
+            <view class="discuss_item" wx:for="{{detail.popular_comments}}" wx:key="index">
+                <view class="portrait">
+                    <image class="portrait_img" src="{{item.author.avatar}}" />
+                </view>
+                <view class="content">
+                    <view class="username">{{item.author.name}}</view>
+                    <view class="signature">{{item.author.signature}}</view>
+                    <view class="comment">
+                        <text>{{item.content}}</text>
+                    </view>
+                    <view class="time">
+                        <text>{{item.created_at}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- 底部暂无更多 -->
+    <view class="detail_tips">- 暂无更多 -</view>
+</view>

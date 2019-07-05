@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText":"影片详情",
+  "usingComponents": {
+    "panel":"../../Component/fold-panel/panel"
+  }
+}

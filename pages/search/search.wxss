@@ -1,0 +1,7 @@
+/* pages/search/search.wxss */
+@import "../../common_style/common.wxss";
+@import "../index/index.wxss";
+
+.list_search{
+    width: 100%;
+}

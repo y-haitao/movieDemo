@@ -1,0 +1,63 @@
+<!--pages/search/search.wxml-->
+<view class="container">
+    <view class="list_search">
+        <van-search
+        value="{{ searchMovie }}"
+        placeholder="请输入搜索的电影名称"
+        show-action
+        bind:search="onSearch"
+        bind:cancel="onCancel"
+        />
+    </view>
+    
+    <text>- 暂未实现搜索功能 -</text>
+
+    <!-- 搜索内容显示 -->
+    <view wx:if="{{movies.length}}" style="width:100%">
+        <view class="movie_item" wx:for="{{movies}}" wx:key="index" id="{{item.id}}" bindtap="jumpDetail">
+            <!-- 左边电影图片 -->
+            <view class="item_left">
+                <image class="item_left_img" src="{{item.images.small}}" />
+            </view>
+            <!-- 右边影片介绍 -->
+            <view class="item_right">
+                <!-- 详情介绍 -->
+                <view class="item_r_detail">
+                    <!-- 电影名称 -->
+                    <view class="title">
+                        <text>{{item.title}}</text>
+                        <text class="rating">豆瓣评分：{{item.rating.average == 0 ? "暂无" : item.rating.average}}</text>
+                    </view>
+                    <!-- 观看量 -->
+                    <view class="collect_count">
+                        <text class="collect_count_text">{{item.collect_count}}</text> 人观看过
+                            <!-- 影片时长 -->
+                        <text class="durations">({{item.durations == "" ? "暂无" : item.durations[0]}})</text>
+                    </view>
+                    <!-- weixin script -->
+                    <wxs module="m1">
+                        var starrings = function (casts) {
+                        casts = casts.map(function(cast, index) {
+                            if (casts.length - 1 !== index) {
+                            return cast.name + ' '
+                            } else {
+                            return cast.name
+                            }
+                        })
+                        return casts.join('')
+                        }
+                        module.exports.starrings = starrings
+                    </wxs>
+                    <!-- 主演人员 -->
+                    <view class="casts ellipsis">主演：{{m1.starrings(item.casts)}}</view>
+                    <!-- 影片类型 -->
+                    <view class="genres">类型：{{item.genres}}</view>
+                    <!-- 大陆上映时间 -->
+                    <view class="mainland_pubdate">
+                        <text class="mainland_pubdate_text">上映时间：{{item.mainland_pubdate}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

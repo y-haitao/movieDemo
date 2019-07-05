@@ -1,0 +1,31 @@
+.fold {
+    position: relative;
+    margin-top: 0 !important;
+    padding: 30rpx 30rpx 0;
+    background: #fff;
+}
+
+.fold .summary {
+    max-height: 136rpx;
+    line-height: 40rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.summary text {
+    font-size: 30rpx;
+    line-height: 40rpx;
+    color: #555;
+}
+
+.fold_btn {
+    height: 44rpx;
+    text-align: center;
+    color: #aaa;
+    cursor: pointer;
+}
+
+/* 打开折叠简介时候最大的高度 */
+.open .summary {
+    max-height: 10000rpx !important;
+}

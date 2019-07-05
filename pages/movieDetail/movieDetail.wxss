@@ -1,0 +1,281 @@
+/* pages/movieDetail/movieDetail.wxss */
+
+@import "../../common_style/common.wxss";
+
+/* 影片详情 */
+.movie_panel{
+    width:100%;
+    height:376rpx;
+    position:relative;
+    cursor:pointer;
+}
+
+.movie_filter{
+    position:absolute;
+    z-index:-2;
+    width:100%;
+    height:100%;
+    background-color:#333;
+}
+
+.panel_bg{
+    width:100%;
+    height:100%;
+    z-index:-2;
+    overflow:hidden;
+    position:absolute;
+    filter:blur(1.2rem);
+    background-size:cover;
+    background-repeat:no-repeat;
+    opacity:.55;
+}
+
+.panel_main{
+    display:flex;
+    height:300rpx;
+    padding:38rpx 60rpx 38rpx 30rpx;
+}
+
+.main_left>image{
+    display: block;
+    width:220rpx;
+    height:300rpx;
+    box-sizing:border-box;
+}
+
+.main_right{
+    display:flex;
+    flex-direction:column;
+    overflow-x:hidden;
+    margin-left:25rpx;
+    line-height:1;
+    color:#fff;
+    flex:1;
+}
+
+.title_Chinese{
+    font-size:40rpx;
+    margin-top:14rpx;
+    font-weight:700;
+}
+
+.rating{
+    font-size:20rpx;
+    font-weight:700;
+    color:#f03d37;
+    margin-left:10rpx;
+}
+
+.title_English{
+    margin-top:20rpx;
+    font-size:24rpx;
+    color:#fff;
+    opacity:.8;
+}
+
+.wish_count{
+    margin-top: 20rpx;
+}
+
+.wish_count_teext{
+    font-size:28rpx;
+    font-weight:700;
+    color:#fc0;
+}
+
+.genres{
+    margin-top:20rpx;
+    font-size:24rpx;
+    color:#fff;
+    opacity:.8;
+}
+
+.length{
+    margin-top:20rpx;
+    font-size:24rpx;
+    color:#fff;
+    opacity:.8;
+}
+
+.pubdate{
+    margin-top:20rpx;
+    font-size:24rpx;
+    color:#fff;
+    opacity:.8;
+}
+
+/* 影片简介 */
+.summary{
+    width: 100%;
+    margin-bottom: 10rpx;
+}
+
+/* 演职人员 */
+.detail_item{
+    width:100%;
+    background:#fff;
+    padding:10rpx 30rpx 10rpx 30rpx;
+    box-sizing:border-box;
+    font-size: 24rpx;
+    font-weight: 700;
+    color: #999999;
+    margin-top: 10rpx;
+    margin-bottom: 10rpx;
+}
+
+.common_title{
+    font-size:28rpx;
+    font-weight: 700;
+    color: #999999;
+}
+/* 导演 */
+.scroll_directors{
+    white-space:nowrap;
+    display:flex;
+    margin-top:22rpx;
+    margin-bottom: 20rpx;
+}
+
+.directors{
+    display:inline-block;
+    padding:0 3rpx;
+    margin-right:20rpx;
+    text-align:center;
+}
+
+.directors_text{
+    font-size: 24rpx;
+    font-weight: 700;
+    color: #999999;
+}
+/* 演员 */
+.scroll_actors{
+    white-space:nowrap;
+    display:flex;
+    margin-top:22rpx;
+}
+
+.actor{
+    display:inline-block;
+    padding:0 3rpx;
+    margin-right:20rpx;
+    text-align:center;
+}
+
+.actors_text{
+    font-size: 24rpx;
+    font-weight: 700;
+    color: #999999;
+}
+
+.person{
+    display:block;
+    width:130rpx;
+    height:180rpx;
+}
+
+.name_English{
+    display:block;
+    width:133rpx;
+    font-size:24rpx;
+    color:#000;
+    margin-top: 20rpx;
+    opacity: 0.8;
+}
+
+.name_Chinese{
+    display:block;
+    width:133rpx;
+    font-size:22rpx;
+    color:#999;
+    font-weight: 700;
+    margin-top: 8rpx;
+}
+
+/* 剧照 */
+.scroll_media{
+    white-space:nowrap;
+    display:flex;
+    margin-top:22rpx;
+}
+
+.media_com{
+    display:inline-block;
+    padding:0 3rpx;
+    margin-right:8rpx;
+    text-align:center;
+}
+
+.media_img{
+    width:200rpx;
+    height:140rpx;
+}
+
+/* 精彩影评 */
+.discuss_item{
+    display:flex;
+    justify-content:flex-start;
+    padding:15rpx 25rpx 15rpx 0;
+    color:#555;
+    font-size:28rpx;
+    border-bottom:solid #e5e5e5 2rpx;
+    margin-top:10rpx;
+}
+
+.discuss_item:last-child{
+    border-bottom: 0;
+}
+
+.portrait{
+    margin-right: 20rpx;
+}
+
+.portrait_img{
+    display: inline-block;
+    width: 68rpx;
+    height: 68rpx;
+    border-radius: 50%;
+}
+
+.content{
+    display:flex;
+    flex-direction:column;
+}
+
+.username{
+    width: 100%;
+    font-size: 24rpx;
+    line-height: 36rpx;
+    font-weight: 700;
+}
+
+.signature{
+    font-size:22rpx;
+    line-height:36rpx;
+    color:#999;
+}
+
+.comment{
+    font-size: 22rpx;
+    font-weight: normal;
+    color: #000000;
+    margin-top: 8rpx;
+}
+
+.time{
+    text-align:right;
+    margin-top:20rpx;
+    padding-right:15rpx;
+    font-size:22rpx;
+    color:#999;
+    margin-bottom:15rpx;
+}
+
+/* 底部暂无更多 */
+.detail_tips{
+    text-align:center;
+    font-size:24rpx;
+    color:#555;
+    margin-top: 20rpx;
+    margin-bottom:15rpx;
+}

@@ -1,0 +1,6 @@
+<!--pages/detailList/detailList.wxml-->
+<view class="container">
+    <view wx:if="{{list.length}}" style="width:100%;">
+        <detailList list="{{list}}"></detailList>
+    </view>
+</view>

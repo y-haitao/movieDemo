@@ -1,0 +1,25 @@
+<!--pages/list/list.wxml-->
+<view class="container">
+    <view class="list_search" style="width:100%;" bind:tap="jumpSearch">
+        <van-search value="{{ value }}" disabled placeholder="请输入搜索的电影名称" />
+    </view>
+
+    <view class="content_list" wx:if="{{top250.length}}" style="width:100%;">
+        <!-- 新片榜 -->
+        <detailList list="{{new_movies}}" title="新片榜">
+            <view slot="more_list" class="more_list" bind:tap="jumpAllList" data-type="new_movies">点击查看全部榜单</view>
+        </detailList>
+        <!-- 豆瓣 Top250 -->
+        <detailList list="{{top250}}" title="豆瓣 Top250">
+            <view slot="more_list" class="more_list" bind:tap="jumpAllList" data-type="top250">点击查看全部榜单</view>
+        </detailList>
+        <!-- 口碑榜 -->
+        <detailList list="{{weekly}}" title="口碑榜">
+            <view slot="more_list" class="more_list" bind:tap="jumpAllList" data-type="weekly">点击查看全部榜单</view>
+        </detailList>
+        <!-- 北美票房榜 -->
+        <detailList list="{{us_box}}" title="北美票房榜">
+            <view slot="more_list" class="more_list" bind:tap="jumpAllList" data-type="us_box">点击查看全部榜单</view>
+        </detailList>
+    </view>
+</view>

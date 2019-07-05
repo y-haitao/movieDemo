@@ -1,0 +1,29 @@
+@import '../../pages/index/index.wxss';
+
+.movie_list {
+    width: 100%;
+    background: #fff; 
+}
+
+.list_title {
+    font-size: 30rpx;
+    color: #999;
+    padding: 18rpx 30rpx;
+    background: #fff;
+}
+
+.list_content {
+    border-top: 2rpx solid #e6e6e6;
+    border-bottom: 2rpx solid #e6e6e6;
+}
+
+.more_list{
+    text-align: center;
+    line-height: 44px;
+    height: 44px;
+    font-size: 15px;
+    color: #ef4238;
+    margin-bottom: 25rpx;
+    background: #fff;
+    border-bottom: 2rpx solid #e6e6e6;
+}
